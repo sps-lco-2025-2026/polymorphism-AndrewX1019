@@ -5,18 +5,21 @@ namespace ClassLibrary;
 
 public class Student : Person
 {
+    Person p;
     string year = "";
-    public Student()
+    public Student(Person P)
     {
-        year = Convert.ToString(Age-5);
+        p=P;
+        year = "Y" + Convert.ToString(Age-5);
     }
-    public Student(string s)
+    public Student(Person P, string s)
     {
+        p = P;
         year = s;
     } 
     public override void Screen_name()
     {
         Console.Write(year);
-        base.Screen_name();
+        p.Screen_name();
     }
 }

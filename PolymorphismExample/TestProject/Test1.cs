@@ -15,6 +15,9 @@ public sealed class Test1
         Person p1 = new Person("Andrew", "Xiang", "xianga@stpaulsschool.org", d);
 
         Person p2 = new Person("Andrew", "Xiang", d);
+
+        Person S1 = new Student(p1);
+        Person S2 = new Student(p1, "12");
         Console.WriteLine("Constructors ☑️");
     }
     [TestMethod]
@@ -40,7 +43,7 @@ public sealed class Test1
     {
         DateOnly d1 = new DateOnly(2008, 10, 19);
         Person P1 = new Person("Andrew", "Xiang", "xianga@stpaulsschool.org", d1);
-        Assert.IsTrue(true);
+        Assert.IsTrue(P1.Valid);
 
         DateOnly d2 = new DateOnly(1900, 1, 1);
         Person P2 = new Person("", "", "", d2);
@@ -51,10 +54,23 @@ public sealed class Test1
     {
         DateOnly d1 = new DateOnly(2008, 4, 30);
         Person P1 = new Person("", "", "", d1);
-        Assert.IsTrue(true);
+        Assert.IsTrue(P1.Valid);
 
         DateOnly d2 = new DateOnly(1900, 1, 1);
         Person P2 = new Person("", "", "", d2);
         Assert.IsFalse(P2.Valid);
+    }
+    [TestMethod]
+    public void TestScreen_name()
+    {
+        DateOnly d = new DateOnly(2008, 10, 19);
+        Person p1 = new Person("Andrew", "Xiang", "xianga@stpaulsschool.org", d);
+        p1.Screen_name();
+
+        Person p2 = new Student(p1, "Y12");
+        p2.Screen_name();
+
+        Person p3 = new Student(p1);
+        p3.Screen_name();
     }
 }
