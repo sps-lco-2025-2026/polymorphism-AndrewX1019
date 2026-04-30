@@ -2,7 +2,6 @@
 
 // based on the example here: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords 
 
-
 #region 1
 // Step 1 create the instances of the objects 
 BaseClass bc = new BaseClass();
