@@ -39,7 +39,14 @@ public sealed class Test1
         Assert.IsTrue(P2.Adult);
     }
     [TestMethod]
-    public void Testvalid()
+    public void TestChinese_sign()
+    {
+        DateOnly d1 = new DateOnly(2008, 10, 19);
+        Person P1 = new Person("Andrew", "Xiang", "xianga@stpaulsschool.org", d1);
+        Assert.AreEqual("Rat", P1.Chinese_sign);
+    }
+    [TestMethod]
+    public void TestValid()
     {
         DateOnly d1 = new DateOnly(2008, 10, 19);
         Person P1 = new Person("Andrew", "Xiang", "xianga@stpaulsschool.org", d1);
@@ -72,5 +79,8 @@ public sealed class Test1
 
         Person p3 = new Student(p1);
         p3.Screen_name();
+
+        Person p4 = new Teacher(p1, "Maths");
+        p4.Screen_name();
     }
 }
