@@ -3,8 +3,7 @@ namespace PolymorphismExample.Lib;
 /// <summary>
 /// a derived class, which inherits from the base class 
 /// </summary>
-public 
-class DerivedClass : BaseClass
+public class DerivedClass : BaseClass
 {
     #region 6 override 
     // // #6
